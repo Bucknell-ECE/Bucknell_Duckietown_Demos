@@ -1,0 +1,24 @@
+-Download the entire my-ros-program folder and copy it to home
+
+-Open the file 'prog.launch' in packages/my_package/launch
+
+-Edit this line: 
+      <node pkg="my_package" type="demo.py" name="demo" output="screen"/> 
+      
+-Change type to specify a python file located in packages/my_package/src that you wish to run
+
+-If you create a new python script to run on the bot, be sure to save it in the src folder and 
+ edit the properties to allow running as an executable
+ 
+-In the terminal, enter 'cd my-ros-program'
+
+-Next, enter 'dts devel build -f -H botname.local' being sure to replace botname with the name of your bot
+
+-Once built, enter 'dts devel run -H botname.local', once again replacing botname
+
+-To view images being published by the bot, open a new terminal window and enter:
+    'docker run -it -v ~:/home --env-file cooldudeENV.list --rm --net host duckietown/dt-ros-commons:daffy-amd64 /bin/bash'
+    
+-Once completed, open a new terminal and enter 'dts start_gui_tools botname'
+
+-Finally, enter 'rqt_image_view botname' and a window should open showing the image views
