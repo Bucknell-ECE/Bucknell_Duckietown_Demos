@@ -1,0 +1,17 @@
+<launch>
+
+  <group ns="$(arg veh)">  
+	  <!-- <arg name="node_name" default="joy_node"/>
+	  <arg name="param_file_name" default="default" doc="Specify a param file. ex:megaman"/> -->
+
+    
+    <!-- <node pkg="my_package" type="newprog.py" name="newprog" output="screen"/> -->
+    <node pkg="my_package" type="polydrive.py" name="polydrive" output="screen"/>
+    <!-- <node pkg="joy" type="joy_node" name="joy_node2" output="screen">
+      <rosparam command="load" file="$(find my_package)/config/$(arg node_name)/$(arg param_file_name).yaml"/>
+    </node> -->
+
+
+  </group>
+
+</launch>

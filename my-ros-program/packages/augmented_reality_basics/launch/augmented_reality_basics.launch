@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+
+  <arg name="node_name" default="ar_node"/>
+  <arg name="map_file" default="def_map"/>
+    <param name="map_name" value="$(arg map_file)" />
+  <arg name="veh"/>
+    <param name="veh_name" value="$(arg veh)" />
+
+  
+  <node pkg="augmented_reality_basics" type="basic_ar.py" name="augmented_reality_basics_node" output="screen">
+    <!-- <rosparam command="load" file="$(find augmented_reality_basics)/maps/$(arg map_file).yaml"/> -->
+  </node>
+
+
+
+</launch>
